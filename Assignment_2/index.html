@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Your personalized news aggregator - Get the latest news tailored to your interests">
+    <title>Home - Personalized News Aggregator</title>
+    <style>
+        /* General Styles */
+        :root {
+            --primary-color: #007bff;
+            --primary-hover: #0056b3;
+            --background-color: #f8f9fa;
+            --text-color: #333;
+            --card-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            --card-shadow-hover: 0px 0px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background-color: var(--background-color);
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        /* Header and Navigation */
+        header {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1rem 0;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        nav {
+            background-color: #222;
+            padding: 0.75rem;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 0.75rem 1.125rem;
+            display: inline-block;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            border-radius: 5px;
+        }
+
+        nav a:hover,
+        nav a.active {
+            background-color: white;
+            color: black;
+            transform: translateY(-2px);
+        }
+
+        /* Main Section */
+        .container {
+            flex: 1;
+            width: 90%;
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 1rem;
+        }
+
+        .headline-box {
+            margin-bottom: 2rem;
+        }
+
+        h2 {
+            font-size: 2rem;
+            font-weight: bold;
+            margin: 0;
+            color: var(--text-color);
+        }
+
+        /* Categories Section */
+        .categories {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .category-card {
+            background-color: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: var(--card-shadow);
+            text-align: center;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .category-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--card-shadow-hover);
+        }
+
+        .category-card h3 {
+            color: var(--primary-color);
+            font-size: 1.25rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .category-card p {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 1rem;
+        }
+
+        .btn {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 0.75rem 1.25rem;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 0.9rem;
+            font-weight: bold;
+            display: inline-block;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: var(--primary-hover);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #222;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            margin-top: auto;
+        }
+
+        footer a {
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                width: 95%;
+            }
+
+            nav a {
+                padding: 0.5rem 0.75rem;
+                font-size: 0.9rem;
+            }
+
+            .categories {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header role="banner">
+        <h1>Personalized News Aggregator</h1>
+    </header>
+
+    <nav role="navigation" aria-label="Main navigation">
+        <a href="index.html" class="active" aria-current="page">Home</a>
+        <a href="news.html">News</a>
+        <a href="trending.html">Trending</a>
+        <a href="saved.html">saved</a>
+        <a href="topics.html">Topics</a>
+        <a href="profile.html">Profile</a>
+    </nav>
+
+    <main class="container">
+        <section class="headline-box">
+            <h2>Top Headlines</h2>
+        </section>
+
+        <section class="categories" aria-label="News categories">
+            <article class="category-card">
+                <h3>Technology</h3>
+                <p>Latest updates on AI, gadgets, and innovations.</p>
+                <a href="#" class="btn" aria-label="Read more about Technology news">Read More</a>
+            </article>
+
+            <article class="category-card">
+                <h3>Business</h3>
+                <p>Market trends, stock updates, and financial news.</p>
+                <a href="#" class="btn" aria-label="Read more about Business news">Read More</a>
+            </article>
+
+            <article class="category-card">
+                <h3>Sports</h3>
+                <p>Live scores, match highlights, and sports news.</p>
+                <a href="#" class="btn" aria-label="Read more about Sports news">Read More</a>
+            </article>
+
+            <article class="category-card">
+                <h3>Health</h3>
+                <p>Medical breakthroughs, wellness tips, and more.</p>
+                <a href="#" class="btn" aria-label="Read more about Health news">Read More</a>
+            </article>
+
+            <article class="category-card">
+                <h3>Entertainment</h3>
+                <p>Movies, music, celebrity news, and trends.</p>
+                <a href="#" class="btn" aria-label="Read more about Entertainment news">Read More</a>
+            </article>
+
+            <article class="category-card">
+                <h3>Science</h3>
+                <p>Explore discoveries in physics, biology, and space.</p>
+                <a href="#" class="btn" aria-label="Read more about Science news">Read More</a>
+            </article>
+
+            <article class="category-card">
+                <h3>Politics</h3>
+                <p>Stay informed on global and local political updates.</p>
+                <a href="#" class="btn" aria-label="Read more about Politics news">Read More</a>
+            </article>
+
+            <article class="category-card">
+                <h3>Environment</h3>
+                <p>Climate change, sustainability, and conservation.</p>
+                <a href="#" class="btn" aria-label="Read more about Environment news">Read More</a>
+            </article>
+
+            <article class="category-card">
+                <h3>Travel</h3>
+                <p>Discover new destinations and travel tips.</p>
+                <a href="#" class="btn" aria-label="Read more about Travel news">Read More</a>
+            </article>
+        </section>
+    </main>
+
+    <footer role="contentinfo">
+        <p>&copy; 2025 Personalized News Aggregator <a href="privacy.html">Privacy & Policy</a></p>
+    </footer>
+</body>
+</html>

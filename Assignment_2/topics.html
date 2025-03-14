@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Browse news by category on Personalized News Aggregator">
+    <title>Topics - Personalized News Aggregator</title>
+    <style>
+        /* General Styles */
+        :root {
+            --primary-color: #007bff;
+            --primary-hover: #0056b3;
+            --background-color: #f8f9fa;
+            --text-color: #333;
+            --card-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            --card-shadow-hover: 0px 0px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background-color: var(--background-color);
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        /* Header and Navigation */
+        header {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1rem 0;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        nav {
+            background-color: #222;
+            padding: 0.75rem;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 0.75rem 1.125rem;
+            display: inline-block;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            border-radius: 5px;
+        }
+
+        nav a:hover,
+        nav a.active {
+            background-color: white;
+            color: black;
+            transform: translateY(-2px);
+        }
+
+        /* Main Section */
+        .container {
+            flex: 1;
+            width: 90%;
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 1rem;
+        }
+
+        .topics-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .topic-card {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: var(--card-shadow);
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .topic-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--card-shadow-hover);
+        }
+
+        .topic-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px 10px 0 0;
+        }
+
+        .topic-card-content {
+            padding: 1.25rem;
+        }
+
+        .topic-card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 0.75rem;
+            color: var(--primary-color);
+        }
+
+        .topic-card p {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 1rem;
+        }
+
+        .topic-stats {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.8rem;
+            color: #888;
+            margin-bottom: 1rem;
+        }
+
+        .btn {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 0.75rem 1.25rem;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 0.9rem;
+            font-weight: bold;
+            display: inline-block;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: var(--primary-hover);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #222;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            margin-top: auto;
+        }
+
+        footer a {
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                width: 95%;
+            }
+
+            nav a {
+                padding: 0.5rem 0.75rem;
+                font-size: 0.9rem;
+            }
+
+            .topics-section {
+                grid-template-columns: 1fr;
+            }
+
+            .topic-card img {
+                height: 180px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header role="banner">
+        <h1>Personalized News Aggregator</h1>
+    </header>
+
+    <nav role="navigation" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="news.html">News</a>
+        <a href="trending.html">Trending</a>
+        <a href="saved.html">saved</a>
+        <a href="topics.html" class="active" aria-current="page">Topics</a>
+        <a href="profile.html">Profile</a>
+    </nav>
+
+    <main class="container">
+        <h2>Browse News by Category</h2>
+
+        <div class="topics-section" aria-label="News categories">
+            <article class="topic-card">
+                <img src="images/technology.jpg" alt="Technology news category" loading="lazy">
+                <div class="topic-card-content">
+                    <h3>Technology</h3>
+                    <p>Stay updated with the latest advancements in AI, gadgets, and digital innovation.</p>
+                    <div class="topic-stats">
+                        <span>1,234 Articles</span>
+                        <span>Updated Daily</span>
+                    </div>
+                    <a href="#" class="btn" aria-label="Browse technology news">Browse Technology</a>
+                </div>
+            </article>
+
+            <article class="topic-card">
+                <img src="images/business.jpg" alt="Business news category" loading="lazy">
+                <div class="topic-card-content">
+                    <h3>Business</h3>
+                    <p>Get insights on stock markets, corporate trends, and global business developments.</p>
+                    <div class="topic-stats">
+                        <span>2,156 Articles</span>
+                        <span>Updated Daily</span>
+                    </div>
+                    <a href="#" class="btn" aria-label="Browse business news">Browse Business</a>
+                </div>
+            </article>
+
+            <article class="topic-card">
+                <img src="images/sports.jpg" alt="Sports news category" loading="lazy">
+                <div class="topic-card-content">
+                    <h3>Sports</h3>
+                    <p>Follow your favorite teams, tournaments, and sports events from around the world.</p>
+                    <div class="topic-stats">
+                        <span>1,789 Articles</span>
+                        <span>Updated Daily</span>
+                    </div>
+                    <a href="#" class="btn" aria-label="Browse sports news">Browse Sports</a>
+                </div>
+            </article>
+
+            <article class="topic-card">
+                <img src="images/health.jpg" alt="Health news category" loading="lazy">
+                <div class="topic-card-content">
+                    <h3>Health</h3>
+                    <p>Stay informed about the latest health trends, medical breakthroughs, and wellness tips.</p>
+                    <div class="topic-stats">
+                        <span>1,567 Articles</span>
+                        <span>Updated Daily</span>
+                    </div>
+                    <a href="#" class="btn" aria-label="Browse health news">Browse Health</a>
+                </div>
+            </article>
+
+            <article class="topic-card">
+                <img src="images/entertainment.jpg" alt="Entertainment news category" loading="lazy">
+                <div class="topic-card-content">
+                    <h3>Entertainment</h3>
+                    <p>Get the latest updates on movies, music, celebrities, and pop culture.</p>
+                    <div class="topic-stats">
+                        <span>2,345 Articles</span>
+                        <span>Updated Daily</span>
+                    </div>
+                    <a href="#" class="btn" aria-label="Browse entertainment news">Browse Entertainment</a>
+                </div>
+            </article>
+        </div>
+    </main>
+
+    <footer role="contentinfo">
+        <p>&copy; 2025 Personalized News Aggregator <a href="privacy.html">Privacy & Policy</a></p>
+    </footer>
+</body>
+</html>
