@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Manage your profile and preferences on Personalized News Aggregator">
+    <title>Profile - Personalized News Aggregator</title>
+    <style>
+        /* General Styles */
+        :root {
+            --primary-color: #007bff;
+            --primary-hover: #0056b3;
+            --background-color: #f8f9fa;
+            --text-color: #333;
+            --card-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            --card-shadow-hover: 0px 0px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background-color: var(--background-color);
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        /* Header and Navigation */
+        header {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1rem 0;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        nav {
+            background-color: #222;
+            padding: 0.75rem;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 0.75rem 1.125rem;
+            display: inline-block;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            border-radius: 5px;
+        }
+
+        nav a:hover,
+        nav a.active {
+            background-color: white;
+            color: black;
+            transform: translateY(-2px);
+        }
+
+        /* Main Section */
+        .container {
+            flex: 1;
+            width: 90%;
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 1rem;
+        }
+
+        .profile-section {
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .profile-card {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: var(--card-shadow);
+            text-align: center;
+        }
+
+        .profile-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin-bottom: 1rem;
+            object-fit: cover;
+        }
+
+        .profile-info {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: var(--card-shadow);
+        }
+
+        h2 {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 1.5rem;
+            color: var(--text-color);
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        .btn {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 0.75rem 1.25rem;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 0.9rem;
+            font-weight: bold;
+            display: inline-block;
+            transition: background-color 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: var(--primary-hover);
+        }
+
+        .preferences-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .preference-item {
+            background-color: #f8f9fa;
+            padding: 1rem;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #222;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            margin-top: auto;
+        }
+
+        footer a {
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                width: 95%;
+            }
+
+            nav a {
+                padding: 0.5rem 0.75rem;
+                font-size: 0.9rem;
+            }
+
+            .profile-section {
+                grid-template-columns: 1fr;
+            }
+
+            .profile-card {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header role="banner">
+        <h1>Personalized News Aggregator</h1>
+    </header>
+
+    <nav role="navigation" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="news.html">News</a>
+        <a href="trending.html">Trending</a>
+        <a href="saved.html">saved</a>
+        <a href="topics.html">Topics</a>
+        <a href="profile.html" class="active" aria-current="page">Profile</a>
+    </nav>
+
+    <main class="container">
+        <div class="profile-section">
+            <div class="profile-card">
+                <img src="images/profile-placeholder.jpg" alt="Profile picture" class="profile-image">
+                <h3>John Doe</h3>
+                <p>News Enthusiast</p>
+                <p>Member since 2024</p>
+                <button class="btn" style="margin-top: 1rem;">Change Photo</button>
+            </div>
+
+            <div class="profile-info">
+                <h2>Profile Settings</h2>
+                <form>
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" value="John Doe">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" value="john.doe@example.com">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="location">Location</label>
+                        <input type="text" id="location" value="New York, USA">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="language">Preferred Language</label>
+                        <select id="language">
+                            <option value="en">English</option>
+                            <option value="es">Spanish</option>
+                            <option value="fr">French</option>
+                            <option value="de">German</option>
+                        </select>
+                    </div>
+
+                    <h3>News Preferences</h3>
+                    <div class="preferences-grid">
+                        <div class="preference-item">
+                            <input type="checkbox" id="tech" checked>
+                            <label for="tech">Technology</label>
+                        </div>
+                        <div class="preference-item">
+                            <input type="checkbox" id="business" checked>
+                            <label for="business">Business</label>
+                        </div>
+                        <div class="preference-item">
+                            <input type="checkbox" id="sports">
+                            <label for="sports">Sports</label>
+                        </div>
+                        <div class="preference-item">
+                            <input type="checkbox" id="health" checked>
+                            <label for="health">Health</label>
+                        </div>
+                        <div class="preference-item">
+                            <input type="checkbox" id="entertainment">
+                            <label for="entertainment">Entertainment</label>
+                        </div>
+                        <div class="preference-item">
+                            <input type="checkbox" id="science" checked>
+                            <label for="science">Science</label>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn" style="margin-top: 2rem;">Save Changes</button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <footer role="contentinfo">
+        <p>&copy; 2025 Personalized News Aggregator <a href="privacy.html">Privacy & Policy</a></p>
+    </footer>
+</body>
+</html>
+

@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Privacy policy and terms of service for Personalized News Aggregator">
+    <title>Privacy Policy - Personalized News Aggregator</title>
+    <style>
+        /* General Styles */
+        :root {
+            --primary-color: #007bff;
+            --primary-hover: #0056b3;
+            --background-color: #f8f9fa;
+            --text-color: #333;
+            --card-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            --card-shadow-hover: 0px 0px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background-color: var(--background-color);
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        /* Header and Navigation */
+        header {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1rem 0;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        nav {
+            background-color: #222;
+            padding: 0.75rem;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 0.75rem 1.125rem;
+            display: inline-block;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            border-radius: 5px;
+        }
+
+        nav a:hover,
+        nav a.active {
+            background-color: white;
+            color: black;
+            transform: translateY(-2px);
+        }
+
+        /* Main Section */
+        .container {
+            flex: 1;
+            width: 90%;
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 1rem;
+        }
+
+        .privacy-section {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: var(--card-shadow);
+            margin-bottom: 2rem;
+        }
+
+        h2 {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 1.5rem;
+            color: var(--text-color);
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            margin: 1.5rem 0 1rem;
+        }
+
+        p {
+            margin-bottom: 1rem;
+            line-height: 1.8;
+        }
+
+        ul {
+            margin-left: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #222;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            margin-top: auto;
+        }
+
+        footer a {
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                width: 95%;
+            }
+
+            nav a {
+                padding: 0.5rem 0.75rem;
+                font-size: 0.9rem;
+            }
+
+            .privacy-section {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header role="banner">
+        <h1>Personalized News Aggregator</h1>
+    </header>
+
+    <nav role="navigation" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="news.html">News</a>
+        <a href="trending.html">Trending</a>
+        <a href="saved.html">saved</a>
+        <a href="topics.html">Topics</a>
+        <a href="profile.html">Profile</a>
+    </nav>
+
+    <main class="container">
+        <section class="privacy-section" aria-label="Privacy Policy">
+            <h2>Privacy Policy</h2>
+            
+            <h3>Information We Collect</h3>
+            <p>We collect information that you provide directly to us when using our services:</p>
+            <ul>
+                <li>Account information (name, email, password)</li>
+                <li>Profile information and preferences</li>
+                <li>News reading history and interests</li>
+                <li>Device and usage information</li>
+            </ul>
+
+            <h3>How We Use Your Information</h3>
+            <p>We use the collected information to:</p>
+            <ul>
+                <li>Personalize your news feed</li>
+                <li>Improve our services</li>
+                <li>Communicate with you about updates</li>
+                <li>Analyze usage patterns</li>
+            </ul>
+
+            <h3>Data Security</h3>
+            <p>We implement appropriate security measures to protect your personal information from unauthorized access, alteration, disclosure, or destruction.</p>
+
+            <h3>Your Rights</h3>
+            <p>You have the right to:</p>
+            <ul>
+                <li>Access your personal data</li>
+                <li>Correct inaccurate data</li>
+                <li>Request deletion of your data</li>
+                <li>Opt-out of marketing communications</li>
+            </ul>
+
+            <h3>Contact Us</h3>
+            <p>If you have any questions about our privacy policy, please contact us at privacy@newsaggregator.com</p>
+        </section>
+    </main>
+
+    <footer role="contentinfo">
+        <p>&copy; 2025 Personalized News Aggregator <a href="privacy.html">Privacy & Policy</a></p>
+    </footer>
+</body>
+</html>
